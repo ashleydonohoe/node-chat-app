@@ -4,11 +4,22 @@
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
 	<title>Node Chat App</title>
-	<link rel="stylesheet" href="css/style.css">
+	<!-- <link rel="stylesheet" href="css/style.css"> -->
 </head>
 <body>
 
 	<h1>HTML5 boilerplate</h1>
 
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    let socket = io();
+    socket.on("connect", () => {
+      console.log("Connected to server");
+    });
+
+    socket.on("disconnect", () => {
+      console.log("Disconnected from server");
+    });
+  </script>
 </body>
 </html>
